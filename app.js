@@ -3,6 +3,11 @@ var app = express();
 var path = require('path');
 var formidable = require('formidable');
 var fs = require('fs');
+var dir = './uploads';
+
+if (!fs.existsSync(dir)){
+    fs.mkdirSync(dir);
+}
 
 app.use(express.static(path.join(__dirname, 'public')));
 
